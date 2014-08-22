@@ -2,21 +2,16 @@ function Controller() {
     function appendRoute(points) {
         var ok = {
             title: "TripLogr Journey",
-            fillOpacity: 0,
             lineWidth: 5,
             lineColor: "#000000",
             lineOpacity: .8,
-            lineDashLengths: [ 10, 7 ],
-            lineDashPhase: 2,
-            scaleLineDash: true,
             lineJoin: mapbox.LINE_JOIN_ROUND,
             points: points
         };
         Ti.API.info("Adding shape:");
         Ti.API.info(points);
         mapView.addShape(ok);
-        var distance = distanceBetweenTwoPoints(points[points.length - 1].latitude, points[points.length - 1].longitude, startLat, startLng);
-        distance > 1 ? mapView.zoom = 14 : distance > 3 ? mapView.zoom = 13 : distance > 5 ? mapView.zoom = 12 : distance > 10 ? mapView.zoom = 11 : distance > 25 ? mapView.zoom = 10 : distance > 50 && (mapView.zoom = 9);
+        distanceBetweenTwoPoints(points[points.length - 1].latitude, points[points.length - 1].longitude, startLat, startLng);
     }
     function distanceBetweenTwoPoints(lat1, lon1, lat2, lon2) {
         var R = 6371;
@@ -101,9 +96,9 @@ function Controller() {
                 YapDB.createTrip(tripId, function() {});
                 _points = [];
                 _points.push({
-                    longitude: startLat,
-                    latitude: startLng,
-                    speed: 0
+                    longitude: startLng,
+                    latitude: startLat,
+                    speed: es.coords.speed
                 });
                 mapView.setAnnotation({
                     latitude: startLat,
@@ -189,9 +184,10 @@ function Controller() {
                 });
                 YapDB.createWaypoint(e.coords.latitude, e.coords.longitude, tripId, function() {});
             }
-            if (5 == _points.length && tripStarted) {
+            if (10 == _points.length && tripStarted) {
                 appendRoute(_points);
-                _points = _points.splice(0, 4);
+                _points = _points.splice(0, 9);
+                mapView.centerLatLng = [ e.coords.latitude, e.coords.longitude + .005 ];
             }
         }
     });

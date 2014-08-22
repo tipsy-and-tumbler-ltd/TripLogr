@@ -53,10 +53,16 @@ var YapDB = {
 	  },
 	  
 	  createTrip: function(_id, callback){  	
-			db.setInCollection("trip:"+_id, "trips", {"id": _id, "date": new Date(), "purpose": "Trip in progress...", "odometer_start": 0, "odometer_end": 0, "total_kilometers": 0}, function(success) {    
+			db.setInCollection("trip:"+_id, "trips", {"id": _id, "date": new Date(), "purpose": "Trip in progress...", "odometer_start": 0, "odometer_end": 0, "total_kilometers": 0, "cloud": false}, function(success) {    
 			    //console.log("Set", success);
 			    callback(success);
 			});
+	  },
+	  
+	  updateTripCloudFlag: function(_id, callback){
+	  		db.setInCollection("trip:"+_id, "trips", {"cloud": true}, function(success) {
+	  			 callback(success);
+	  		});
 	  },
 	  
 	  updateTrip: function(_id, purpose, odo_end, km, callback){  	

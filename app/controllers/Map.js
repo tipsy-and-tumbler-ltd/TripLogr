@@ -1,9 +1,12 @@
 var args = arguments[0] || {};
 var YapDB = require('YapDB').YapDB;
+var CloudBackup = require('OpenShiftBackup').CloudBackup;
+
 var mapbox = require('com.polancomedia.mapbox');
 Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST_FOR_NAVIGATION;
 Titanium.Geolocation.distanceFilter = 10;
 Ti.Geolocation.purpose = "This app requires your permission to access your vehicle location.";
+
 var _points = [];
 var startLat, startLng, endLat, endLng, tripId = "";
 var mapView;
@@ -59,11 +62,10 @@ Titanium.Geolocation.addEventListener('location', function(e){
 			YapDB.createWaypoint(e.coords.latitude, e.coords.longitude, tripId, function(success){});
 		}
 		
-		//mapView.centerLatLng = [e.coords.latitude, e.coords.longitude +0.005];
 		
-		if(_points.length == 5 && tripStarted){
+		if(_points.length == 10 && tripStarted){
 			appendRoute(_points);
-			_points = _points.splice(0, 4); //removes all but the last item
+			_points = _points.splice(0, 9); //removes all but the last item
 		}
 	}
 });
@@ -75,13 +77,13 @@ function appendRoute(points){
 	var ok = {
 		title : 'TripLogr Journey',
 		//fillColor : '#880000',
-		fillOpacity : 0,
+		//fillOpacity : ,
 		lineWidth : 5,
 		lineColor : '#000000',
 		lineOpacity: 0.8,
-		lineDashLengths: [10, 7],
-		lineDashPhase: 2.0,
-		scaleLineDash: true,
+		//lineDashLengths: [10, 7],
+		//lineDashPhase: 2.0,
+		//scaleLineDash: true,
 		lineJoin: mapbox.LINE_JOIN_ROUND,
 		points : points
 	};
@@ -91,25 +93,6 @@ function appendRoute(points){
 	mapView.addShape(ok);
 	
 	var distance = distanceBetweenTwoPoints(points[points.length-1].latitude, points[points.length-1].longitude, startLat, startLng );
-	
-	if(distance > 1) {
-		mapView.zoom = 14;
-	}
-	else if(distance > 3){
-		mapView.zoom = 13;
-	}
-	else if(distance > 5){
-		mapView.zoom = 12;
-	}
-	else if(distance > 10){
-		mapView.zoom = 11;
-	}
-	else if(distance > 25){
-		mapView.zoom = 10;
-	}
-	else if(distance > 50){
-		mapView.zoom = 9;
-	}
 }
 
 function distanceBetweenTwoPoints(lat1, lon1, lat2, lon2) {
@@ -126,6 +109,8 @@ function distanceBetweenTwoPoints(lat1, lon1, lat2, lon2) {
 function finalizeTrip(obj){
 	var odometer, purpose = "";		
 	var distanceKM = obj.distanceKM;
+	var endLat = obj.endLat;
+	var endLng = obj.endLng;
 	var distanceMeasured = 0;
 	Ti.API.info('Total distance travelled in KM: ' + distanceKM);
 	
@@ -160,6 +145,24 @@ function finalizeTrip(obj){
 		YapDB.updateTrip(tripId, purpose, odometer, distanceKM, function(success){
 			 Ti.App.fireEvent('getTripListings');
 			 mapView.removeAllAnnotations();
+			 
+			 //attempt to backup this to cloud
+			 var backupParams = {
+			 		startLat: startLat,
+			 		startLng: startLng,
+			 		endLat: endLat,
+			 		endLng: endLng,
+			 		purpose: purpose,
+			 		distance: distanceKM,
+			 		odometerEnd: odometer,
+			 		tripDate: now,
+			 		tripId: tripId
+			 };
+			 CloudBackup.backupTrip(Alloy.Globals.userId, backupParams, function(backupSuccess){
+			 		YapDB.updateTripCloudFlag(tripId, function(flagSuccess){
+			 			 Ti.API.info(flagSuccess);
+			 		});
+			 });
 		});		
 	});
 
@@ -205,7 +208,7 @@ function startTrip(e){
 				}
 			}
 			
-			Ti.App.fireEvent('finalizeTrip', {distanceKM: distanceKM});
+			Ti.App.fireEvent('finalizeTrip', {distanceKM: distanceKM, endLat: results[results.length-1].latitude, endLng:  results[results.length-1].longitude});
 		});
 		
 	}
@@ -225,11 +228,13 @@ function startTrip(e){
 				
 			_points = [];
 			_points.push({
-					longitude : startLat,
-					latitude : startLng,
-					speed: 0
+					longitude : startLng,
+					latitude : startLat,
+					speed: es.coords.speed
 			});
 	
+			mapView.centerLatLng = [e.coords.latitude, e.coords.longitude +0.005];
+			
 			mapView.setAnnotation({
 			    latitude: startLat,
 			    longitude: startLng,

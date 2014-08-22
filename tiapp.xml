@@ -2,11 +2,11 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>com.tipsyandtumbler.triplogr</id>
     <name>TripLogr</name>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <publisher>Tipsy &amp; Tumbler Ltd</publisher>
     <url>http://www.tipsyandtumbler.co.uk</url>
     <description>not specified</description>
-    <copyright>not Tipsy &amp; Tumbler Ltd</copyright>
+    <copyright>Tipsy &amp; Tumbler Ltd</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
