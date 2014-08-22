@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "iphone",
+	"iosSdkPath": "/Users/boydlee/Library/Application Support/Titanium/mobilesdk/osx/3.3.1.v20140718152512/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "0f42c0710d82668f9f86d160ca948c02",
+	"modulesNativeHash": "55b9376f26f5cf063dfe72681afaf498",
+	"gitHash": "2e51fbd",
+	"name": "TripLogr",
+	"id": "com.tipsyandtumbler.triplogr",
+	"analytics": false,
+	"publisher": "Tipsy & Tumbler Ltd",
+	"url": "http://www.tipsyandtumbler.co.uk",
+	"version": "1.0",
+	"description": "not specified",
+	"copyright": "not Tipsy & Tumbler Ltd",
+	"guid": "27e014af-f62d-4a3d-8588-9e562ab66789",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}

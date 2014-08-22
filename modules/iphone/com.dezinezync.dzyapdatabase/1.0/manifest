@@ -1,0 +1,15 @@
+version: 1.0
+apiversion: 2
+description: TiDZYapDatabase
+author: Nikhil Nigade
+license: MIT License
+copyright: Copyright (c) 2014 by Nikhil Nigade
+
+
+# these should not be edited
+name: TiDZYapDatabase
+moduleid: com.dezinezync.dzyapdatabase
+guid: 87d07c06-4af6-46ba-bee3-814de01163a5
+platform: iphone
+minsdk: 3.2.3.GA
+minos: 7.0

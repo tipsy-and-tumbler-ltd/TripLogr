@@ -1,0 +1,51 @@
+<!--
+  The Titanium UX Template Library
+  http://www.uxmobilepatterns.com
+  
+  Settings: a settings form template
+  
+-->
+
+
+<Alloy>
+	<Window title="Settings">
+		
+		<TableView class="tableview-form">
+			<TableViewSection>
+
+				<TableViewRow height="70">
+					<Label class="label-H5" textAlign="center" left="10" right="10">
+						TripLogr can automatically backup your Trip data to the Cloud for free if you wish. Cloud backup is necessary if you want to generate PDF trip reports.
+					</Label>
+				</TableViewRow>
+
+				<Widget src="ti.ux.forms.row.text" title="" hintText="Insert your name" icon="fa-user" id="username" />
+				
+				<Widget src="ti.ux.forms.row.switch" title="  Cloud Backup" value="true" icon="fa-cloud" id="cloudBackup"  />
+				
+				<Widget src="ti.ux.forms.row.optionspicker" title=" Distance Measurement"  value="" id="optDistance" value="0" cancel="2" options="Miles|Kilometers|Cancel" icon="fa-car"/>
+
+			</TableViewSection>			
+			
+			<TableViewSection>
+				<TableViewRow height="100">
+					<Label class="label-H5" textAlign="center" left="10" top="30" right="10">
+						If you have a compatible iBeacon device, you can connect it to TripLogr for instant reminders before you set off on a journey.
+					</Label>
+				</TableViewRow>
+			
+				<Widget src="ti.ux.forms.row.switch" title="  iBeacon Enabled" icon="fa-bullseye" id="beaconEnabled"/>		
+				<Widget src="ti.ux.forms.row.text" title=""  hintText="Beacon Identifer" icon="fa-bold"  id="beaconName" />					
+				<Widget src="ti.ux.forms.row.text" title=""  hintText="Beacon UUID" icon="fa-tag"  id="beaconUUID" />			
+				<Widget src="ti.ux.forms.row.text" title="" hintText="Beacon Major" icon="fa-circle-o"  id="beaconMajor" />			
+				<Widget src="ti.ux.forms.row.text" title="" hintText="Beacon Minor" icon="fa-circle-thin"  id="beaconMinor" />
+				
+				<TableViewRow height="80">
+					<Button id="btnSave" title="Save" />
+				</TableViewRow>
+				
+			</TableViewSection>			
+		</TableView> 
+				
+	</Window>
+</Alloy>

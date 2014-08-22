@@ -1,0 +1,87 @@
+<p>benCoding.PDF.Converters</p>
+<p>The benCoding.PDF Converters proxy provides conversion helper functions when working with PDFs.  At the moment the feature list is pretty small, but will be growing as needed or contributions are provided. </p>
+<h2>Before you start</h2>
+
+<ul>
+<li>This is an iOS module designed to work with Titanium SDK 3.0.0GA</li>
+<li>Before using this module you first need to install the package. If you need instructions on how to install a 3rd party module please read this installation guide.</li>
+</ul>
+<h2>Download the release</h2>
+
+<p>There is two ways you can download this module. </p>
+<p>Android:</p>
+<p>The go to the <a href="https://github.com/benbahrenburg/benCoding.PDF/tree/master/Android/dist">dist</a> folder. This will have a release compiled for anyone download it from github.</p>
+<p>iOS: </p>
+<p>The go to the <a href="https://github.com/benbahrenburg/benCoding.PDF/tree/master/iOS/dist">dist</a> folder. This will have a release compiled for anyone download it from github.</p>
+<h2>Building from source?</h2>
+
+<p>If you are building from source you will need to do the following:
+* Modify the titanium.xcconfig file with the path to your Titanium installation</p>
+<h2>Setup</h2>
+
+<ul>
+<li>Download the latest release from the releases folder ( or you can build it yourself )</li>
+<li>Install the bencoding.sms module. If you need help here is a "How To" <a href="https://wiki.appcelerator.org/display/guides/Configuring+Apps+to+Use+Modules">guide</a>. </li>
+<li>You can now use the module via the commonJS require method, example shown below.</li>
+</ul>
+<pre><code>
+var pdf = require('bencoding.pdf');
+</code></pre>
+
+<h2>Creating the Converters Object</h2>
+
+<p>Requiring the module into your project</p>
+<pre><code>
+//Require the securely module into your project
+var pdf = require('bencoding.pdf');
+//Create a new properties object
+var converters = pdf.createConverters();
+</code></pre>
+
+<h2>Methods</h2>
+
+<p><b>convertImageToPDF</b>( TiBlob image, int resolution )
+Adds the specified callback as an event listener for the named event.</p>
+<p><b>Parameters</b>
+image : TiBlob
+Image to be converted into PDF
+resolution : int
+Optional resolution value. Only applies to iOS</p>
+<p><b>Returns</b>
+TiBlob</p>
+<p><b>Example</b>
+<pre><code>
+    Ti.Media.takeScreenshot(function(event){
+        // set blob on image view
+        var image = event.media;
+        var pdfBlob = converters.convertImageToPDF(image,100);
+        var pdfFile = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'text.pdf');
+        pdfFile.write(pdfBlob); 
+    });
+</code></pre></p>
+<hr />
+<h2>Dependent Projects</h2>
+
+<p>The benCoding.PDF module uses the below projects.  I highly encourage you to check them out using the information below.</p>
+<p>iText ( used on Android only) </p>
+<p>Please visit <a href="http://itextpdf.com">iText Website</a> to learn more</p>
+<p>Please note iText is licensed under the GNU Affero General Public License version 3 and depending on the nature of your app you might need a license. Please visit <a href="http://itextpdf.com/terms-of-use/index.php">license</a> for details.</p>
+<h2>Licensing & Support</h2>
+
+<p>This project is licensed under the OSI approved Apache Public License (version 2). For details please see the license associated with each project.</p>
+<p>Developed by <a href="http://bahrenburgs.com">Ben Bahrenburg</a> available on twitter <a href="http://twitter.com/benCoding">@benCoding</a></p>
+<h2>Learn More</h2>
+
+<h3>Examples</h3>
+
+<p>Please check the module's example folder for details. </p>
+<p>These samples are also available on github at the following:</p>
+<p><a href="https://github.com/benbahrenburg/benCoding.PDF/tree/master/Android/example">Android Examples</a> </p>
+<p><a href="https://github.com/benbahrenburg/benCoding.PDF/tree/master/iOS/example">iOS Examples</a> </p>
+<h3>Twitter</h3>
+
+<p>Please consider following the <a href="http://www.twitter.com/benCoding">@benCoding Twitter</a> for updates 
+and more about Titanium.</p>
+<h3>Blog</h3>
+
+<p>For module updates, Titanium tutorials and more please check out my blog at <a href="http://benCoding.com">benCoding.Com</a>.</p>

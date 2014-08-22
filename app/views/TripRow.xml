@@ -1,0 +1,13 @@
+<Alloy>
+	<TableViewRow id="row">
+		<View id="rowContainer">
+			<Label id="dateDay" /> 
+			<Label id="dateMonthYear" /> 
+			<ImageView image="images/row_divider.jpg" height="60" width="1" left="100" top="10" />
+			
+			<Label id="lblDescription" />
+			<Label id="lblOdometer" />
+			<Label id="lblMileage" />
+		</View>
+	</TableViewRow>
+</Alloy>

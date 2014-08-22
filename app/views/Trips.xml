@@ -1,0 +1,36 @@
+<Alloy>
+	<Window class="container" id="win">
+		    <RightNavButton platform=ios>
+                    <Button title="Report" onClick="createReport" />
+                </RightNavButton>
+                
+		<TableView id="tblTrips" class="tableview-form">
+			<TableViewSection>
+	
+				<TableViewRow height="315">
+					<Widget src="ti.ux.image" id="img" 
+						left="0"
+						right="0"
+						zoomable="false"
+						height="180"
+						innerMargin="80"
+						realTop="40"
+						top="0"
+						image="/images/default-car.jpg"
+						touchEnabled="false">
+					</Widget>
+					<ImageView id="cameraBtn" zIndex="999"/>
+						<Label class="label-H6" textAlign="center" height="90" left="10" top="210" right="10">
+						This is your list of previous trips. Each trip contains an odometer reading for the start and end of your trip, plus a trip purpose. All trip information is date and time-stamped so you can easily create a report for your TripLog.
+					</Label>
+				</TableViewRow>
+				
+				
+			</TableViewSection>			
+			
+			
+		</TableView>
+		
+		
+	</Window>
+</Alloy>

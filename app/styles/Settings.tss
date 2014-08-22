@@ -1,0 +1,24 @@
+
+"TableView[platform=ios]":{
+	separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE
+},
+
+"TableViewRow":{	
+	height:Ti.UI.SIZE
+},
+
+"TableViewRow[platform=ios]":{
+	selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE
+},
+
+"#btnSave" :{
+	left: 10,
+	right: 10,
+	height: 40,
+	borderWidth: 1,
+	borderColor: '#000',
+	backgroundColor: '#fff',
+	top: 20,
+	backgroundSelectedColor: '#ccc',
+	backgroundFocusedColor: '#ccc'
+}

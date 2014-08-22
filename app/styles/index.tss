@@ -1,0 +1,9 @@
+"Window": {
+	backgroundColor: "#fff"
+}
+
+".tabs": {
+	tabsBackgroundColor: "#fff",
+	tintColor: "#000",
+	tabsBackgroundDisabledColor : "#fff"
+}

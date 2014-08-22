@@ -1,0 +1,4 @@
+// this is a generated file - DO NOT EDIT
+
+CO_MOBILEDATASYSTEMS_TIBEACON_OTHER_LDFLAGS=$(inherited) -framework CoreBluetooth
+OTHER_LDFLAGS=$(inherited) $(CO_MOBILEDATASYSTEMS_TIBEACON_OTHER_LDFLAGS) 

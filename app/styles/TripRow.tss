@@ -1,0 +1,76 @@
+"#row": {
+	height: 85,
+	backgroundColor: '#CCC'
+}
+
+"#rowContainer": {
+	left: 5,
+	right: 5,
+	top: 5,
+	bottom: 0,
+	backgroundColor: '#fff',
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+}
+
+"#dateDay": {
+	left: 10,
+	top: 0,
+	height: 30,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 50
+	},
+	color: '#000',
+	text: '30'
+}
+
+"#dateMonthYear": {
+	left: 12,
+	bottom: 7	,
+	height: 15,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 12
+	},
+	color: '#000',
+	text: 'August, 2014'
+}
+
+"#lblDescription": {
+	text: "Off to the airport, heading to Split HR",
+	top: 10,
+	width: Ti.UI.FILL,
+	right: 5,
+	left: 112,
+	font: {
+		fontSize: 13
+	},
+	height: 40,
+	verticalAlign: Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP
+}
+
+"#lblOdometer": {
+	left: 112,
+	bottom: 7	,
+	height: 15,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 12
+	},
+	color: '#000',
+	text: 'Odometer: 82300'
+}
+
+"#lblMileage": {
+	right: 5,
+	bottom: 7	,
+	height: 15,
+	width: Ti.UI.SIZE,
+	font: {
+		fontSize: 14,
+		fontWeight: 'bold'
+	},
+	color: '#000',
+	text: '129mi'
+}

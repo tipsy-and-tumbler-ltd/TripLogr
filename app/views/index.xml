@@ -1,0 +1,13 @@
+<Alloy>
+	<TabGroup class="tabs" activeTab="1">
+		<Tab title="Trips" icon="images/Map_Path.png">
+			<Window title="Tab 1"></Window>
+		</Tab>
+		<Tab title="Journey" icon="images/Near_Me.png">
+			<Window title="Tab 2"></Window>
+		</Tab>
+		<Tab title="Settings" icon="images/Network_Closed.png">
+			<Window title="Settings"></Window>
+		</Tab>
+	</TabGroup>
+</Alloy>

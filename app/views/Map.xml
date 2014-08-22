@@ -1,0 +1,7 @@
+<Alloy>
+	<Window id="container" class="container">
+		    <RightNavButton platform=ios>
+                    <Button title="Start Trip" onClick="startTrip" />
+                </RightNavButton>
+	</Window>
+</Alloy>

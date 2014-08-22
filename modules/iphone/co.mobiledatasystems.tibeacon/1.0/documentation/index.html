@@ -1,0 +1,111 @@
+<h1>TiBeacon Module</h1>
+<h2>Description</h2>
+<p>TiBeacon allows you to create up to 5 beacon regions, using uuid, uuid &amp; major and uuid, major and minor values to define each region</p>
+<h2>Accessing the TiBeacon Module</h2>
+<p>To access this module from JavaScript, you would do the following:</p>
+<pre><code>var TiBeacon = require("co.mobiledatasystems.tibeacon");
+</code></pre>
+<p>The TiBeacon variable is a reference to the Module object.<br />
+</p>
+<h2>Reference</h2>
+<p>The following functions are exposed:</p>
+<p>initializeBeaconMonitoring - used to register the app with core location services.
+startMonitoringBeaconRegion - can be called several times and is used to register a region with core location services.
+stopMonitoringBeaconRegion - used to stop and clear down a region and remove it from core location services.
+stopAllBeacons - used to stop and clear down all the beacon regions and remove them all from core location services.
+sendLocalNotification - a convenience function that allows you to send an immediate local notification.</p>
+<h3>initializeBeaconMonitoring</h3>
+<p>arguments:
+    success - a function that is called when the module successfully registers with core location services.
+    error - a function that is called when the module fails to register with core location services.
+    region - a function that is called when we detect we have entered or exited a beacon region.
+    ranged - a function that is called whenever we successfully process beacon monitoring (roughly every second) and returns the beacons found.
+    change - a function that is called when we detect another beacon is the nearest one.</p>
+<p>purpose:
+    used to register the app with core location services.  We specify the functions that will be called when one of the modules events fire.</p>
+<h3>startMonitoringBeaconRegion</h3>
+<p>arguments:
+    uuid - the uuid we will listen for, estimotes use this by default 'B9407F30-F5F8-466E-AFF9-25556B57FE6D'.
+    major - the major value that the beacon will transmit (optional, may be omitted).
+    minor - the minor value that the beacon will transmit (optional, may be omitted).
+    identifier - a string we use to identify the region.  It is returned in the beacon data so we can identify the region the beacon belongs to.
+    notifyEntryStateOnDisplay - should be left set to true, used for module debugging purposes.
+    keepRanging - when we have exited a region, if false ranging will be switched off until we detect we entered the region again.  This may be slow but significantly saves battery power.  Setting to true leaves ranging on, improving performance at the expense of power consumption.</p>
+<p>purpose:
+    We call this once we have successfully registered the module with core location services.
+    Core location services will detect when we have entered or exited a beacon region, even if the app is no longer running and will fire the regionChanged event.  This is exposed in the region event in the 'initializeBeaconMonitoring' function.
+    If the app is running in foreground and the 'keepRanging' argument is 'true' then regardless of whether we are in a region we will continue to check for beacons.
+    If a beacon is detected that belongs to the beacon region its data is returned in the ranged event. This is exposed in the ranged event in the 'initializeBeaconMonitoring' function.
+    If we detect that a different beacon in the same region is now neared then the change event is fired.</p>
+<h3>stopMonitoringBeaconRegion</h3>
+<p>arguments:
+    identifier - the string we used to identify the region when we started monitoring.<br />
+</p>
+<p>purpose: stop monitoring for that region and remove it from core location services.  You can therefore safely call startMonitoringBeaconRegion again to begin monitoring for the same region if you then wish.</p>
+<h3>stopAllBeacons</h3>
+<p>arguments:
+    none</p>
+<p>purpose: stop monitoring for all the regions and remove them from core location services.</p>
+<h3>sendLocalNotification</h3>
+<p>arguments:
+    message - the string we will display in the local notification.
+    sound - the sound we will play when the local notification fires.<br />
+</p>
+<p>purpose: a convenience method to send a local notification.  Even if the app is no longer running, if we detect a region event (i.e. we have entered or exited a region) core location services will open the app and trigger the region event for a few seconds before shutting down again. You can therefore call this function to trigger a local notification to alert the user that they have entered or exited a beacon region.</p>
+<h2>Usage</h2>
+<pre><code>TiBeacon.initializeBeaconMonitoring({
+    success:function(e){
+        //called when we have successfully registered the core location services
+        Ti.API.info('success: ' + JSON.stringify(e));
+
+        //begin monitoring a specific region
+        beacons.startMonitoringBeaconRegion({
+            uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
+            identifier:'all', //a logical name that is returned when beacons fire events so we can easily identify which region they belong to
+            notifyEntryStateOnDisplay:true,
+            keepRanging:true //tells the module to keep on ranging even if no beacons are in a region, this improves performance at the expense of power consumption
+        });
+    },
+    error:function(e){
+        //called when we have failed to register the core location services
+        Ti.API.error(JSON.stringify(e));
+        alert("This device doesn't support iBeacons");
+    },
+    region:function(e){
+        //called when we detect a beacon region has been entered or when we have left (i.e. no more beacons can be seen belonging to the region)
+        Ti.API.info('region changed event: ' + JSON.stringify(e));
+
+        //we can use the convenience method to trigger a local notification...even if the app isn't running!
+        //we can test for 'entered' or 'exited'
+        if(e.status === 'entered' &amp;&amp; e.identifier === 'all'){
+            beacons.sendLocalNotification({
+                message:'Hello from the beacon demo',
+                sound:'/sounds/siren.mp3'
+            });
+        }
+    },
+    ranged:function(e){
+        //when the app is in foreground, this is fired every second or so and reports all the beacons in range
+        Ti.API.info('region ranged event: ' + JSON.stringify(e));
+    },
+    change:function(e){
+        //called when a new beacon becomes the nearest one
+        Ti.API.info('change event: ' + JSON.stringify(e));
+    }   
+});
+
+//stop monitoring for a specific region
+TiBeacon.stopMonitoringBeaconRegion({
+    identifier:'all'
+});
+
+//stop monitoring all regions
+TiBeacon.stopAllBeacons();
+</code></pre>
+<h2>M Hudson</h2>
+<p>Martin Hudson MSc, MAPM
+mobile data systems ltd.
+email: martin.hudson@mobiledatasystems.co</p>
+<h2>License</h2>
+<p>Commercial, Royalty free, see license details.
+You are allowed to use the module in as many titanium projects as you like, including any commercial apps you sell.</p>

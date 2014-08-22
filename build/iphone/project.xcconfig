@@ -1,0 +1,6 @@
+TI_VERSION=3.3.1
+TI_SDK_DIR=/Users/boydlee/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION).v20140718152512/iphone
+TI_APPID=com.tipsyandtumbler.triplogr
+OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd
+OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) -weak_framework iAd
+#include "module"
