@@ -6,6 +6,112 @@ function Controller() {
         $.tableCreate.hide();
         results.sort(sortTripData);
         var rows = [];
+        var headerRow = Ti.UI.createTableViewRow({
+            height: 100
+        });
+        headerRow.add(Ti.UI.createImageView({
+            image: "appicon.png",
+            width: 72,
+            height: 72,
+            top: 20,
+            right: 20
+        }));
+        headerRow.add();
+        headerRow.add(Ti.UI.createLabel({
+            text: "TripLogr Report",
+            width: Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
+            top: 20,
+            left: 20,
+            font: {
+                fontSize: 25,
+                fontWeight: "bold"
+            }
+        }));
+        headerRow.add(Ti.UI.createLabel({
+            text: Alloy.Globals.username,
+            width: Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
+            top: 50,
+            left: 20,
+            font: {
+                fontSize: 20
+            }
+        }));
+        rows.push(headerRow);
+        var row = Ti.UI.createTableViewRow({
+            className: "reportRow",
+            height: 50,
+            top: 50
+        });
+        row.add(Ti.UI.createView({
+            height: 2,
+            left: 20,
+            right: 20,
+            top: 0,
+            width: Ti.UI.FILL,
+            backgroundColor: "#000"
+        }));
+        row.add(Ti.UI.createLabel({
+            width: Ti.UI.SIZE,
+            height: Ti.UI.SIZE,
+            left: 20,
+            top: 8,
+            font: {
+                fontSize: 22
+            },
+            width: 300,
+            text: "TRIP PURPOSE"
+        }));
+        row.add(Ti.UI.createLabel({
+            width: Ti.UI.SIZE,
+            height: 30,
+            top: 8,
+            font: {
+                fontSize: 22
+            },
+            left: 400,
+            text: "DATE"
+        }));
+        row.add(Ti.UI.createLabel({
+            width: Ti.UI.SIZE,
+            height: 30,
+            top: 8,
+            font: {
+                fontSize: 22
+            },
+            left: 820,
+            text: "ODO. START"
+        }));
+        row.add(Ti.UI.createLabel({
+            width: Ti.UI.SIZE,
+            height: 30,
+            top: 8,
+            font: {
+                fontSize: 22
+            },
+            left: 960,
+            text: "ODO. END"
+        }));
+        row.add(Ti.UI.createLabel({
+            width: Ti.UI.SIZE,
+            height: 30,
+            top: 8,
+            font: {
+                fontSize: 22
+            },
+            left: 1120,
+            text: "DISTANCE"
+        }));
+        row.add(Ti.UI.createView({
+            height: 2,
+            left: 20,
+            right: 20,
+            top: 43,
+            width: Ti.UI.FILL,
+            backgroundColor: "#000"
+        }));
+        rows.push(row);
         for (var i = 0; results.length > i; i++) {
             var row = Ti.UI.createTableViewRow({
                 className: "reportRow"
@@ -26,7 +132,7 @@ function Controller() {
                 font: {
                     fontSize: 18
                 },
-                left: 380,
+                left: 400,
                 text: results[i].date.toString()
             }));
             results[i].odometer_start && row.add(Ti.UI.createLabel({
@@ -35,7 +141,7 @@ function Controller() {
                 font: {
                     fontSize: 18
                 },
-                left: 700,
+                left: 820,
                 text: Math.floor(results[i].odometer_start).toString()
             }));
             results[i].odometer_end && row.add(Ti.UI.createLabel({
@@ -44,9 +150,23 @@ function Controller() {
                 font: {
                     fontSize: 18
                 },
-                left: 800,
+                left: 960,
                 text: Math.floor(results[i].odometer_end).toString()
             }));
+            if (results[i].total_kilometers) {
+                var distanceMeasured = 0;
+                var measure = "miles" == Alloy.Globals.TripLogr.distanceMeasurement.toLowerCase() ? "mi" : "km";
+                distanceMeasured = "mi" == measure ? (.62137 * results[i].total_kilometers).toFixed(2) : results[i].total_kilometers.toFixed(2);
+                row.add(Ti.UI.createLabel({
+                    width: Ti.UI.SIZE,
+                    height: 30,
+                    font: {
+                        fontSize: 18
+                    },
+                    left: 1120,
+                    text: distanceMeasured + measure
+                }));
+            }
             row.add(Ti.UI.createView({
                 width: Ti.UI.FILL,
                 height: 2,
@@ -126,22 +246,22 @@ function Controller() {
     $.__views.header.add($.__views.closeBtn);
     closeWindow ? $.__views.closeBtn.addEventListener("click", closeWindow) : __defers["$.__views.closeBtn!click!closeWindow"] = true;
     var __alloyId18 = [];
-    $.__views.__alloyId22 = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
+    $.__views.fromDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
         value: "",
         title: " Start Date",
         icon: "fa-clock-o",
-        id: "__alloyId22",
+        id: "fromDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId23 = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
+    $.__views.toDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
         value: "",
         title: " End Date",
         icon: "fa-clock-o",
-        id: "__alloyId23",
+        id: "toDate",
         __parentSymbol: __parentSymbol
     });
     $.__views.__alloyId19 = Ti.UI.createTableViewSection({
@@ -172,31 +292,31 @@ function Controller() {
         id: "__alloyId21"
     });
     $.__views.__alloyId20.add($.__views.__alloyId21);
-    $.__views.__alloyId22 = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
+    $.__views.fromDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
         value: "",
         title: " Start Date",
         icon: "fa-clock-o",
-        id: "__alloyId22",
+        id: "fromDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId19.add($.__views.__alloyId22.getViewEx({
+    $.__views.__alloyId19.add($.__views.fromDate.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId23 = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
+    $.__views.toDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
         value: "",
         title: " End Date",
         icon: "fa-clock-o",
-        id: "__alloyId23",
+        id: "toDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId19.add($.__views.__alloyId23.getViewEx({
+    $.__views.__alloyId19.add($.__views.toDate.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId24 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId22 = Ti.UI.createTableViewRow({
         height: "80",
         backgroundColor: "#fff",
         font: {
@@ -204,9 +324,9 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId24"
+        id: "__alloyId22"
     });
-    $.__views.__alloyId19.add($.__views.__alloyId24);
+    $.__views.__alloyId19.add($.__views.__alloyId22);
     $.__views.btnCreateReport = Ti.UI.createButton({
         left: 10,
         right: 10,
@@ -221,7 +341,7 @@ function Controller() {
         id: "btnCreateReport",
         title: "Create Report"
     });
-    $.__views.__alloyId24.add($.__views.btnCreateReport);
+    $.__views.__alloyId22.add($.__views.btnCreateReport);
     $.__views.tableCreate = Ti.UI.createTableView({
         backgroundColor: "#fff",
         separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
@@ -249,8 +369,11 @@ function Controller() {
     var results = [];
     Ti.App.addEventListener("generateReport", generatePDF);
     $.btnCreateReport.addEventListener("click", function() {
-        YapDB.fetchAllTrips(function(_results) {
-            results = _results;
+        (void 0 == $.fromDate.getValue() || null == $.fromDate.getValue()) && YapDB.fetchAllTrips(function(_results) {
+            for (var i = 0; _results.length > i; i++) {
+                Ti.API.info($.fromDate.getValue());
+                _results[i].date.getUTCDate() >= $.fromDate.getValue().getUTCDate() && _results[i].date.getUTCDate() <= $.toDate.getValue().getUTCDate() && results.push(_results[i]);
+            }
             Ti.App.fireEvent("generateReport");
         });
     });

@@ -10,17 +10,18 @@ var CloudBackup = {
 	        timeout: 30000
 	    });
 	    
+	    Ti.API.info(url);
+	    Ti.API.info(props);
+	    	    
 	    client.onerror = function(e) {
 	    	error(e);
 	    };
-	    
+	    	    
 	    client.onload = function() {
 	    	var json = JSON.parse(this.responseText);
 	    	success(json);
-	    };
-	    	    
+	    };	    	    
 	    client.open(method, url);
-	    client.setRequestHeader("content-type", "application/json");	
 	    
 	    if(method == 'POST' || method == 'PUT') {
 	   		client.send(props);
@@ -30,16 +31,18 @@ var CloudBackup = {
 	   }
 	},
 	
-	backupTrip: function(userId, props, callback){
-		 var url = "http://triplogr-tipsyandtumbler.rhcloud.com/trips/" + userId;
-		 this.httpRequest(url, props, 'POST', function(success){
-		 		Ti.API.info(success);
-		 		callback(success);
-		 }, function(err){
-		 	 	Ti.API.error(err);
-		 });
+	backupTrip: function(userId, props, callback){		
+		if(Alloy.Globals.cloudBackupActive) { 
+			 var url = "http://triplogr-tipsyandtumbler.rhcloud.com/trips/" + userId;
+			 this.httpRequest(url, props, 'POST', function(success){
+			 		Ti.API.info(success);
+			 		callback(success);
+			 }, function(err){
+			 	 	Ti.API.error(err);
+			 });
+		 }		 
 	}	
-	
+		
 };
 
 

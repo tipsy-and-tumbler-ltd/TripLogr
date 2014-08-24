@@ -78,7 +78,7 @@ function appendRoute(points){
 		title : 'TripLogr Journey',
 		//fillColor : '#880000',
 		//fillOpacity : ,
-		lineWidth : 5,
+		lineWidth : 3,
 		lineColor : '#000000',
 		lineOpacity: 0.8,
 		//lineDashLengths: [10, 7],
@@ -233,7 +233,7 @@ function startTrip(e){
 					speed: es.coords.speed
 			});
 	
-			mapView.centerLatLng = [e.coords.latitude, e.coords.longitude +0.005];
+			mapView.centerLatLng = [es.coords.latitude, es.coords.longitude+0.0035];
 			
 			mapView.setAnnotation({
 			    latitude: startLat,

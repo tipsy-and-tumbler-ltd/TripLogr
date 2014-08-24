@@ -32,6 +32,7 @@ var YapDB = {
 					var _id = null;
 					if(results.obj && results.obj.length > 0){
 						_id = results.obj[0].id;
+						Alloy.Globals.userId = _id;
 					}
 				   callback({id:_id});
 				});
@@ -60,7 +61,7 @@ var YapDB = {
 	  },
 	  
 	  updateTripCloudFlag: function(_id, callback){
-	  		db.setInCollection("trip:"+_id, "trips", {"cloud": true}, function(success) {
+	  		db.setNXInCollection("trip:"+_id, "trips", {"cloud": true}, function(success) {
 	  			 callback(success);
 	  		});
 	  },
@@ -71,7 +72,7 @@ var YapDB = {
 	  	    odo_end = Math.floor(odo_end);
 	  	    odo_start = Math.floor(odo_start);
 
-			db.setInCollection("trip:"+_id, "trips", {"id": _id, "date": new Date(), "purpose": purpose, "odometer_start": odo_start, "odometer_end":odo_end, "total_kilometers": km}, function(success) {    
+			db.setInCollection("trip:"+_id, "trips", {"id": _id, "date": new Date(), "purpose": purpose, "odometer_start": odo_start, "odometer_end":odo_end, "total_kilometers": km, "cloud": false}, function(success) {    
 			   // console.log("Set", success);
 			    callback(success);
 			});

@@ -18,7 +18,10 @@ var YapDB = {
         }
         db.getAllFromCollection("user", function(results) {
             var _id = null;
-            results.obj && results.obj.length > 0 && (_id = results.obj[0].id);
+            if (results.obj && results.obj.length > 0) {
+                _id = results.obj[0].id;
+                Alloy.Globals.userId = _id;
+            }
             callback({
                 id: _id
             });
@@ -41,7 +44,15 @@ var YapDB = {
             purpose: "Trip in progress...",
             odometer_start: 0,
             odometer_end: 0,
-            total_kilometers: 0
+            total_kilometers: 0,
+            cloud: false
+        }, function(success) {
+            callback(success);
+        });
+    },
+    updateTripCloudFlag: function(_id, callback) {
+        db.setNXInCollection("trip:" + _id, "trips", {
+            cloud: true
         }, function(success) {
             callback(success);
         });
@@ -57,7 +68,8 @@ var YapDB = {
             purpose: purpose,
             odometer_start: odo_start,
             odometer_end: odo_end,
-            total_kilometers: km
+            total_kilometers: km,
+            cloud: false
         }, function(success) {
             callback(success);
         });

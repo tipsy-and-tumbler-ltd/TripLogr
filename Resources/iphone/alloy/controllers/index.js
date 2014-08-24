@@ -6,57 +6,57 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __alloyId41 = [];
-    $.__views.__alloyId43 = Ti.UI.createWindow({
+    var __alloyId39 = [];
+    $.__views.__alloyId41 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Tab 1",
-        id: "__alloyId43"
+        id: "__alloyId41"
     });
-    $.__views.__alloyId42 = Ti.UI.createTab({
-        window: $.__views.__alloyId43,
+    $.__views.__alloyId40 = Ti.UI.createTab({
+        window: $.__views.__alloyId41,
         title: "Trips",
         icon: "images/Map_Path.png",
-        id: "__alloyId42"
+        id: "__alloyId40"
     });
-    __alloyId41.push($.__views.__alloyId42);
-    $.__views.__alloyId45 = Ti.UI.createWindow({
+    __alloyId39.push($.__views.__alloyId40);
+    $.__views.__alloyId43 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Tab 2",
-        id: "__alloyId45"
+        id: "__alloyId43"
     });
-    $.__views.__alloyId44 = Ti.UI.createTab({
-        window: $.__views.__alloyId45,
+    $.__views.__alloyId42 = Ti.UI.createTab({
+        window: $.__views.__alloyId43,
         title: "Journey",
         icon: "images/Near_Me.png",
-        id: "__alloyId44"
+        id: "__alloyId42"
     });
-    __alloyId41.push($.__views.__alloyId44);
-    $.__views.__alloyId47 = Ti.UI.createWindow({
+    __alloyId39.push($.__views.__alloyId42);
+    $.__views.__alloyId45 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Settings",
-        id: "__alloyId47"
+        id: "__alloyId45"
     });
-    $.__views.__alloyId46 = Ti.UI.createTab({
-        window: $.__views.__alloyId47,
+    $.__views.__alloyId44 = Ti.UI.createTab({
+        window: $.__views.__alloyId45,
         title: "Settings",
         icon: "images/Network_Closed.png",
-        id: "__alloyId46"
+        id: "__alloyId44"
     });
-    __alloyId41.push($.__views.__alloyId46);
+    __alloyId39.push($.__views.__alloyId44);
     $.__views.index = Ti.UI.createTabGroup({
         tabsBackgroundColor: "#fff",
         tintColor: "#000",
         tabsBackgroundDisabledColor: "#fff",
-        tabs: __alloyId41,
+        tabs: __alloyId39,
         activeTab: "1",
         id: "index"
     });
@@ -82,6 +82,16 @@ function Controller() {
     YapDB.getUserId(function(e) {
         Ti.API.info(e);
         (void 0 == e.id || null == e.id) && YapDB.createUserId();
+    });
+    var CloudBackup = require("OpenShiftBackup").CloudBackup;
+    Ti.App.addEventListener("resume", function() {
+        YapDB.fetchAllTrips(function(data) {
+            for (var i = 0; data.length > i; i++) false == data[i].cloud && CloudBackup.backupTrip(Alloy.Globals.userId, data[i], function() {
+                YapDB.updateTripCloudFlag(data[i].tripId, function(flagSuccess) {
+                    Ti.API.info(flagSuccess);
+                });
+            });
+        });
     });
     var mapWindow = Alloy.createController("Trips").getView();
     $.index.tabs[0].setWindow(mapWindow);

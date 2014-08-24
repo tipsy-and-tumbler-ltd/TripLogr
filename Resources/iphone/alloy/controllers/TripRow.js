@@ -53,15 +53,15 @@ function Controller() {
         id: "dateMonthYear"
     });
     $.__views.rowContainer.add($.__views.dateMonthYear);
-    $.__views.__alloyId34 = Ti.UI.createImageView({
+    $.__views.__alloyId32 = Ti.UI.createImageView({
         image: "images/row_divider.jpg",
         height: "60",
         width: "1",
         left: "100",
         top: "10",
-        id: "__alloyId34"
+        id: "__alloyId32"
     });
-    $.__views.rowContainer.add($.__views.__alloyId34);
+    $.__views.rowContainer.add($.__views.__alloyId32);
     $.__views.lblDescription = Ti.UI.createLabel({
         font: {
             fontSize: 13
@@ -108,17 +108,19 @@ function Controller() {
     _.extend($, $.__views);
     var args = arguments[0] || {};
     Ti.API.info(args);
-    $.dateDay.text = args.date.getDate();
-    $.dateDay.dateMonthYear = (args.date.getMonth() + 1).toString() + " " + args.date.getFullYear();
-    $.lblDescription.text = args.purpose;
-    $.lblOdometer.text = "Odometer: " + args["odometer_end"].toFixed(0);
-    var distanceMeasured = 0;
-    var measure = "miles" == Alloy.Globals.TripLogr.distanceMeasurement.toLowerCase() ? "mi" : "km";
-    distanceMeasured = "mi" == measure ? (.62137 * args.total_kilometers).toFixed(2) : args.total_kilometers.toFixed(2);
-    $.lblMileage.text = distanceMeasured + measure;
-    exports.setBottom = function(val) {
-        $.rowContainer.bottom = val;
-    };
+    if (args) {
+        $.dateDay.text = args.date.getDate();
+        $.dateDay.dateMonthYear = (args.date.getMonth() + 1).toString() + " " + args.date.getFullYear();
+        $.lblDescription.text = args.purpose;
+        $.lblOdometer.text = "Odometer: " + args["odometer_end"].toFixed(0);
+        var distanceMeasured = 0;
+        var measure = "miles" == Alloy.Globals.TripLogr.distanceMeasurement.toLowerCase() ? "mi" : "km";
+        distanceMeasured = "mi" == measure ? (.62137 * args.total_kilometers).toFixed(2) : args.total_kilometers.toFixed(2);
+        $.lblMileage.text = distanceMeasured + measure;
+        exports.setBottom = function(val) {
+            $.rowContainer.bottom = val;
+        };
+    }
     _.extend($, exports);
 }
 

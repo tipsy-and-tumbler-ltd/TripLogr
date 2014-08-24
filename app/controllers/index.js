@@ -1,6 +1,7 @@
 //setup the tabbed windows
 Ti.UI.backgroundColor = "#fff";
 
+
 //check for settings, insert default ones if none exist
 var YapDB = require('YapDB').YapDB;
 YapDB.fetchSettings(function(e){
@@ -26,6 +27,25 @@ YapDB.getUserId(function(e){
 	if(e.id == undefined || e.id == null){
 		YapDB.createUserId();
 	}
+});
+
+/*
+ * On resume, try to cloud backup any trips that have the cloud flag set to false
+ */
+var CloudBackup = require('OpenShiftBackup').CloudBackup;
+
+Ti.App.addEventListener('resume', function(e){
+	YapDB.fetchAllTrips(function(data){
+		for(var i = 0; i < data.length; i++){
+			if(data[i].cloud == false){
+				 CloudBackup.backupTrip(Alloy.Globals.userId, data[i], function(backupSuccess){
+			 		YapDB.updateTripCloudFlag(data[i].tripId, function(flagSuccess){
+			 			 Ti.API.info(flagSuccess);
+			 		});
+			 });
+			}
+		}
+	});
 });
 
 var mapWindow = Alloy.createController('Trips').getView();

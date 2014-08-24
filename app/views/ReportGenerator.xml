@@ -14,8 +14,8 @@
 						</Label>
 					</TableViewRow>
 	
-					<Widget src="ti.ux.forms.row.timepicker" minDate="" maxDate="" value="" title=" Start Date" icon="fa-clock-o" platform="ios"/>		
-					<Widget src="ti.ux.forms.row.timepicker" minDate="" maxDate="" value="" title=" End Date" icon="fa-clock-o" platform="ios"/>
+					<Widget src="ti.ux.forms.row.timepicker" minDate="" maxDate="" value="" title=" Start Date" icon="fa-clock-o" platform="ios" id="fromDate"/>		
+					<Widget src="ti.ux.forms.row.timepicker" minDate="" maxDate="" value="" title=" End Date" icon="fa-clock-o" platform="ios" id="toDate"/>
 				
 				<TableViewRow height="80">
 					<Button id="btnCreateReport" title="Create Report" />

@@ -2,7 +2,7 @@ function Controller() {
     function appendRoute(points) {
         var ok = {
             title: "TripLogr Journey",
-            lineWidth: 5,
+            lineWidth: 3,
             lineColor: "#000000",
             lineOpacity: .8,
             lineJoin: mapbox.LINE_JOIN_ROUND,
@@ -23,6 +23,8 @@ function Controller() {
     function finalizeTrip(obj) {
         var odometer, purpose = "";
         var distanceKM = obj.distanceKM;
+        var endLat = obj.endLat;
+        var endLng = obj.endLng;
         var distanceMeasured = 0;
         Ti.API.info("Total distance travelled in KM: " + distanceKM);
         var measure = "miles" == Alloy.Globals.TripLogr.distanceMeasurement.toLowerCase() ? "mi" : "km";
@@ -48,6 +50,22 @@ function Controller() {
             YapDB.updateTrip(tripId, purpose, odometer, distanceKM, function() {
                 Ti.App.fireEvent("getTripListings");
                 mapView.removeAllAnnotations();
+                var backupParams = {
+                    startLat: startLat,
+                    startLng: startLng,
+                    endLat: endLat,
+                    endLng: endLng,
+                    purpose: purpose,
+                    distance: distanceKM,
+                    odometerEnd: odometer,
+                    tripDate: now,
+                    tripId: tripId
+                };
+                CloudBackup.backupTrip(Alloy.Globals.userId, backupParams, function() {
+                    YapDB.updateTripCloudFlag(tripId, function(flagSuccess) {
+                        Ti.API.info(flagSuccess);
+                    });
+                });
             });
         });
         dialog.show();
@@ -80,7 +98,9 @@ function Controller() {
                     lon1 = 0;
                 }
                 Ti.App.fireEvent("finalizeTrip", {
-                    distanceKM: distanceKM
+                    distanceKM: distanceKM,
+                    endLat: results[results.length - 1].latitude,
+                    endLng: results[results.length - 1].longitude
                 });
             });
         } else {
@@ -100,6 +120,7 @@ function Controller() {
                     latitude: startLat,
                     speed: es.coords.speed
                 });
+                mapView.centerLatLng = [ es.coords.latitude, es.coords.longitude + .0035 ];
                 mapView.setAnnotation({
                     latitude: startLat,
                     longitude: startLng,
@@ -136,6 +157,7 @@ function Controller() {
     _.extend($, $.__views);
     arguments[0] || {};
     var YapDB = require("YapDB").YapDB;
+    var CloudBackup = require("OpenShiftBackup").CloudBackup;
     var mapbox = require("com.polancomedia.mapbox");
     Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_BEST_FOR_NAVIGATION;
     Titanium.Geolocation.distanceFilter = 10;
@@ -187,7 +209,6 @@ function Controller() {
             if (10 == _points.length && tripStarted) {
                 appendRoute(_points);
                 _points = _points.splice(0, 9);
-                mapView.centerLatLng = [ e.coords.latitude, e.coords.longitude + .005 ];
             }
         }
     });
