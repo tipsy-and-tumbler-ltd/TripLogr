@@ -6,8 +6,12 @@ In particular, it uses a number of modules and open source libraries made availa
 during tiConf events in 2014, including:
 
 Titanium MapBox (Adam Paxton) - https://github.com/adampax/titanium-mapbox (tiConf US)
+
 Ti.UI.Templates (Javier Rayon & Sonia Villaneuva) - https://github.com/jaraen/Ti.UX.Templates/ (tiConf EU)
+
 Ti.DZYapDatabase (Nikhil Nagade) - https://github.com/dezinezync/TiDZYapDatabase (tiConf India)
+
 TiBeacon (Martin Hudson) - https://marketplace.appcelerator.com/apps/11242?restoreSearch=true (tiConf EU - note this a paid module with a free trial and a $10 one-time fee)
+
 Bencoding PDF (Benjamin Bahrenburg) - https://github.com/benbahrenburg/benCoding.PDF
 
