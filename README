@@ -1,9 +1,9 @@
 TripLogr is a free utility made in Appcelerator Titanium for tracking journeys and providing a log book style PDF print-out. You can track journeys either manually (by entering in the journey purpose and length via a form) or you can opt to track a journey using GPS and have the app automatically calculate distances. It also includes beacon integration - leave an iBeacon in your car to receive localised push notifications reminding you to log your trips!
 
-[Imgur](http://i.imgur.com/4rkeRjn)
-[Imgur](http://i.imgur.com/oEqd4bM.jpg)
-[Imgur](http://i.imgur.com/ee2YFsZ)
-[Imgur](http://i.imgur.com/oKRuFgE)
+![Imgur](http://i.imgur.com/4rkeRjn "Trips Screen")
+![Imgur](http://i.imgur.com/oEqd4bM.jpg "Map Screen")
+![Imgur](http://i.imgur.com/ee2YFsZ "GPS Logging")
+![Imgur](http://i.imgur.com/oKRuFgE "Settings")
 
 TripLogr features a number of open source Titanium libraries and modules. It is meant to be a showcase of what Titanium can do and how you can integrate with numerous open source projects.  In particular, it uses a number of modules and open source libraries made available by the community and showcased during tiConf events in 2014, including:
 
