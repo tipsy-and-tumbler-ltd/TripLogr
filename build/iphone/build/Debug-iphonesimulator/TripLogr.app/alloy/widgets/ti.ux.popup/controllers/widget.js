@@ -1,1 +1,0 @@
-/Users/boydlee/Documents/Projects/TripLogr/Resources/iphone/alloy/widgets/ti.ux.popup/controllers/widget.js
