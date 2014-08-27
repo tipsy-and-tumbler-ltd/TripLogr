@@ -1,7 +1,8 @@
 	{
 	"global": {
 		"appName":"TripLogr",
-		"theme":"default"
+		"theme":"default",
+		"mapBoxKey": "<YOUR KEY GOES HERE>"
 	}, 
 	"env:development": {}, 
 	"env:test": {}, 

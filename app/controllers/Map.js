@@ -35,7 +35,7 @@ Titanium.Geolocation.getCurrentPosition(function(e) {
  
 	//create the mapbox view 
 	mapView = mapbox.createView({
-	    map: 'tipsyandtumbler.j120dbcf',
+	    map: Alloy.CFG.mapBoxKey,
 	    minZoom: 0,
 	    maxZoom: 18,
 	    zoom: 16,
