@@ -1,3 +1,9 @@
 /.DS_Store
 build
 Resources
+
+/build/alloy/build.json
+/build/iphone/build/Debug-iphonesimulator/TripLogr.app/appicon.png
+/build/iphone/build/Debug-iphonesimulator/TripLogr.app/Default-568h@2x.png
+/build/iphone/build/Debug-iphonesimulator/TripLogr.app/Default.png
+/build/iphone/build/Debug-iphonesimulator/TripLogr.app/Default@2x.png
