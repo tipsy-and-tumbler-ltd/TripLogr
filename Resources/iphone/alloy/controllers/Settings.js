@@ -101,7 +101,7 @@ function Controller() {
         id: "Settings"
     });
     $.__views.Settings && $.addTopLevelView($.__views.Settings);
-    var __alloyId24 = [];
+    var __alloyId31 = [];
     $.__views.username = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
         title: "",
         hintText: "Insert your name",
@@ -125,11 +125,11 @@ function Controller() {
         icon: "fa-car",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId25 = Ti.UI.createTableViewSection({
-        id: "__alloyId25"
+    $.__views.__alloyId32 = Ti.UI.createTableViewSection({
+        id: "__alloyId32"
     });
-    __alloyId24.push($.__views.__alloyId25);
-    $.__views.__alloyId26 = Ti.UI.createTableViewRow({
+    __alloyId31.push($.__views.__alloyId32);
+    $.__views.__alloyId33 = Ti.UI.createTableViewRow({
         height: "70",
         backgroundColor: "#fff",
         font: {
@@ -137,10 +137,10 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId26"
+        id: "__alloyId33"
     });
-    $.__views.__alloyId25.add($.__views.__alloyId26);
-    $.__views.__alloyId27 = Ti.UI.createLabel({
+    $.__views.__alloyId32.add($.__views.__alloyId33);
+    $.__views.__alloyId34 = Ti.UI.createLabel({
         font: {
             fontFamily: Alloy.CFG.fontItalic,
             fontSize: "12dp"
@@ -150,9 +150,9 @@ function Controller() {
         textAlign: "center",
         left: "10",
         right: "10",
-        id: "__alloyId27"
+        id: "__alloyId34"
     });
-    $.__views.__alloyId26.add($.__views.__alloyId27);
+    $.__views.__alloyId33.add($.__views.__alloyId34);
     $.__views.username = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
         title: "",
         hintText: "Insert your name",
@@ -160,7 +160,7 @@ function Controller() {
         id: "username",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId25.add($.__views.username.getViewEx({
+    $.__views.__alloyId32.add($.__views.username.getViewEx({
         recurse: true
     }));
     $.__views.cloudBackup = Alloy.createWidget("ti.ux.forms.row.switch", "widget", {
@@ -170,7 +170,7 @@ function Controller() {
         id: "cloudBackup",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId25.add($.__views.cloudBackup.getViewEx({
+    $.__views.__alloyId32.add($.__views.cloudBackup.getViewEx({
         recurse: true
     }));
     $.__views.optDistance = Alloy.createWidget("ti.ux.forms.row.optionspicker", "widget", {
@@ -182,7 +182,7 @@ function Controller() {
         icon: "fa-car",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId25.add($.__views.optDistance.getViewEx({
+    $.__views.__alloyId32.add($.__views.optDistance.getViewEx({
         recurse: true
     }));
     $.__views.beaconEnabled = Alloy.createWidget("ti.ux.forms.row.switch", "widget", {
@@ -219,11 +219,11 @@ function Controller() {
         id: "beaconMinor",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28 = Ti.UI.createTableViewSection({
-        id: "__alloyId28"
+    $.__views.__alloyId35 = Ti.UI.createTableViewSection({
+        id: "__alloyId35"
     });
-    __alloyId24.push($.__views.__alloyId28);
-    $.__views.__alloyId29 = Ti.UI.createTableViewRow({
+    __alloyId31.push($.__views.__alloyId35);
+    $.__views.__alloyId36 = Ti.UI.createTableViewRow({
         height: "100",
         backgroundColor: "#fff",
         font: {
@@ -231,10 +231,10 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId29"
+        id: "__alloyId36"
     });
-    $.__views.__alloyId28.add($.__views.__alloyId29);
-    $.__views.__alloyId30 = Ti.UI.createLabel({
+    $.__views.__alloyId35.add($.__views.__alloyId36);
+    $.__views.__alloyId37 = Ti.UI.createLabel({
         font: {
             fontFamily: Alloy.CFG.fontItalic,
             fontSize: "12dp"
@@ -245,16 +245,16 @@ function Controller() {
         left: "10",
         top: "30",
         right: "10",
-        id: "__alloyId30"
+        id: "__alloyId37"
     });
-    $.__views.__alloyId29.add($.__views.__alloyId30);
+    $.__views.__alloyId36.add($.__views.__alloyId37);
     $.__views.beaconEnabled = Alloy.createWidget("ti.ux.forms.row.switch", "widget", {
         title: "  iBeacon Enabled",
         icon: "fa-bullseye",
         id: "beaconEnabled",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28.add($.__views.beaconEnabled.getViewEx({
+    $.__views.__alloyId35.add($.__views.beaconEnabled.getViewEx({
         recurse: true
     }));
     $.__views.beaconName = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
@@ -264,7 +264,7 @@ function Controller() {
         id: "beaconName",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28.add($.__views.beaconName.getViewEx({
+    $.__views.__alloyId35.add($.__views.beaconName.getViewEx({
         recurse: true
     }));
     $.__views.beaconUUID = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
@@ -274,7 +274,7 @@ function Controller() {
         id: "beaconUUID",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28.add($.__views.beaconUUID.getViewEx({
+    $.__views.__alloyId35.add($.__views.beaconUUID.getViewEx({
         recurse: true
     }));
     $.__views.beaconMajor = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
@@ -284,7 +284,7 @@ function Controller() {
         id: "beaconMajor",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28.add($.__views.beaconMajor.getViewEx({
+    $.__views.__alloyId35.add($.__views.beaconMajor.getViewEx({
         recurse: true
     }));
     $.__views.beaconMinor = Alloy.createWidget("ti.ux.forms.row.text", "widget", {
@@ -294,10 +294,10 @@ function Controller() {
         id: "beaconMinor",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId28.add($.__views.beaconMinor.getViewEx({
+    $.__views.__alloyId35.add($.__views.beaconMinor.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId31 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId38 = Ti.UI.createTableViewRow({
         height: "80",
         backgroundColor: "#fff",
         font: {
@@ -305,9 +305,9 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId31"
+        id: "__alloyId38"
     });
-    $.__views.__alloyId28.add($.__views.__alloyId31);
+    $.__views.__alloyId35.add($.__views.__alloyId38);
     $.__views.btnSave = Ti.UI.createButton({
         left: 10,
         right: 10,
@@ -321,14 +321,14 @@ function Controller() {
         id: "btnSave",
         title: "Save"
     });
-    $.__views.__alloyId31.add($.__views.btnSave);
-    $.__views.__alloyId23 = Ti.UI.createTableView({
+    $.__views.__alloyId38.add($.__views.btnSave);
+    $.__views.__alloyId30 = Ti.UI.createTableView({
         backgroundColor: "#fff",
         separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
-        data: __alloyId24,
-        id: "__alloyId23"
+        data: __alloyId31,
+        id: "__alloyId30"
     });
-    $.__views.Settings.add($.__views.__alloyId23);
+    $.__views.Settings.add($.__views.__alloyId30);
     exports.destroy = function() {};
     _.extend($, $.__views);
     var YapDB = require("YapDB").YapDB;

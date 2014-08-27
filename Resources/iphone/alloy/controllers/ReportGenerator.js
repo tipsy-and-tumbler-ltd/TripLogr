@@ -245,7 +245,7 @@ function Controller() {
     });
     $.__views.header.add($.__views.closeBtn);
     closeWindow ? $.__views.closeBtn.addEventListener("click", closeWindow) : __defers["$.__views.closeBtn!click!closeWindow"] = true;
-    var __alloyId18 = [];
+    var __alloyId25 = [];
     $.__views.fromDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
@@ -264,11 +264,11 @@ function Controller() {
         id: "toDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId19 = Ti.UI.createTableViewSection({
-        id: "__alloyId19"
+    $.__views.__alloyId26 = Ti.UI.createTableViewSection({
+        id: "__alloyId26"
     });
-    __alloyId18.push($.__views.__alloyId19);
-    $.__views.__alloyId20 = Ti.UI.createTableViewRow({
+    __alloyId25.push($.__views.__alloyId26);
+    $.__views.__alloyId27 = Ti.UI.createTableViewRow({
         height: "70",
         backgroundColor: "#fff",
         font: {
@@ -276,10 +276,10 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId20"
+        id: "__alloyId27"
     });
-    $.__views.__alloyId19.add($.__views.__alloyId20);
-    $.__views.__alloyId21 = Ti.UI.createLabel({
+    $.__views.__alloyId26.add($.__views.__alloyId27);
+    $.__views.__alloyId28 = Ti.UI.createLabel({
         font: {
             fontFamily: Alloy.CFG.fontItalic,
             fontSize: "12dp"
@@ -289,9 +289,9 @@ function Controller() {
         textAlign: "center",
         left: "10",
         right: "10",
-        id: "__alloyId21"
+        id: "__alloyId28"
     });
-    $.__views.__alloyId20.add($.__views.__alloyId21);
+    $.__views.__alloyId27.add($.__views.__alloyId28);
     $.__views.fromDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
         minDate: "",
         maxDate: "",
@@ -301,7 +301,7 @@ function Controller() {
         id: "fromDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId19.add($.__views.fromDate.getViewEx({
+    $.__views.__alloyId26.add($.__views.fromDate.getViewEx({
         recurse: true
     }));
     $.__views.toDate = Alloy.createWidget("ti.ux.forms.row.timepicker", "widget", {
@@ -313,10 +313,10 @@ function Controller() {
         id: "toDate",
         __parentSymbol: __parentSymbol
     });
-    $.__views.__alloyId19.add($.__views.toDate.getViewEx({
+    $.__views.__alloyId26.add($.__views.toDate.getViewEx({
         recurse: true
     }));
-    $.__views.__alloyId22 = Ti.UI.createTableViewRow({
+    $.__views.__alloyId29 = Ti.UI.createTableViewRow({
         height: "80",
         backgroundColor: "#fff",
         font: {
@@ -324,9 +324,9 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId22"
+        id: "__alloyId29"
     });
-    $.__views.__alloyId19.add($.__views.__alloyId22);
+    $.__views.__alloyId26.add($.__views.__alloyId29);
     $.__views.btnCreateReport = Ti.UI.createButton({
         left: 10,
         right: 10,
@@ -341,12 +341,12 @@ function Controller() {
         id: "btnCreateReport",
         title: "Create Report"
     });
-    $.__views.__alloyId22.add($.__views.btnCreateReport);
+    $.__views.__alloyId29.add($.__views.btnCreateReport);
     $.__views.tableCreate = Ti.UI.createTableView({
         backgroundColor: "#fff",
         separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
         top: 70,
-        data: __alloyId18,
+        data: __alloyId25,
         id: "tableCreate"
     });
     $.__views.win.add($.__views.tableCreate);

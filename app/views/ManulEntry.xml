@@ -1,4 +1,27 @@
 <Alloy>
-	<View class="container">
-	</View>
+	<Window class="container" modal="true"  navBarHidden="false"  title="Manual Trip Entry" id="win">
+		    <View id="header">
+		      <Button title="Close" id="closeBtn" onClick="closeWindow" />
+            </View>
+            
+            <TableView id="tableCreate" class="tableview-form">
+				<TableViewSection>
+	
+					<TableViewRow height="70">
+						<Label class="label-H5" textAlign="center" left="10" right="10">
+							TripLogr can automatically backup your Trip data to the Cloud for free if you wish. Cloud backup is necessary if you want to generate PDF trip reports.
+						</Label>
+					</TableViewRow>
+	
+					<Widget src="ti.ux.forms.row.timepicker" minDate="" maxDate="" value="" title=" Trip Date" icon="fa-clock-o" platform="ios" id="tripDate"/>		
+					
+				<TableViewRow height="80">
+					<Button id="btnSave" title="Save" />
+				</TableViewRow>
+				
+			</TableViewSection>			
+		</TableView> 
+		
+		
+	</Window>
 </Alloy>

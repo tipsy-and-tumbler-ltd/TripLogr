@@ -127,7 +127,7 @@ module.exports = [ {
     }
 }, {
     isClass: true,
-    priority: 10000.0016,
+    priority: 10000.0073,
     key: "container",
     style: {
         height: Ti.UI.SIZE,
@@ -587,7 +587,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0017,
+    priority: 100000.0074,
     key: "img",
     style: {
         top: 0,

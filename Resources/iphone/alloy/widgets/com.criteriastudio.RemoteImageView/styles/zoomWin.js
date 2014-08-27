@@ -579,7 +579,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0004,
+    priority: 100000.0061,
     key: "win",
     style: {
         backgroundColor: "transparent",
@@ -587,7 +587,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0007,
+    priority: 100000.0064,
     key: "scroll",
     style: {
         opacity: 0,
@@ -599,7 +599,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100101.0005,
+    priority: 100101.0062,
     key: "img",
     style: {
         width: "100%"

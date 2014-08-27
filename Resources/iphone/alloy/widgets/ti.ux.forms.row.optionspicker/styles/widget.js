@@ -579,7 +579,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0013,
+    priority: 100000.007,
     key: "childrenImage",
     style: {
         right: 8,

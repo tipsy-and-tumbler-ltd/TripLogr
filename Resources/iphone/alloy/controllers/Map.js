@@ -131,6 +131,12 @@ function Controller() {
             now = new Date();
         }
     }
+    function openManualEntry() {
+        var modal = Alloy.createController("ManulEntry");
+        modal.getView().open({
+            modal: true
+        });
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "Map";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -147,12 +153,18 @@ function Controller() {
         id: "container"
     });
     $.__views.container && $.addTopLevelView($.__views.container);
-    $.__views.__alloyId17 = Ti.UI.createButton({
-        title: "Start Trip",
-        id: "__alloyId17"
+    $.__views.__alloyId22 = Ti.UI.createButton({
+        title: "New Entry",
+        id: "__alloyId22"
     });
-    startTrip ? $.__views.__alloyId17.addEventListener("click", startTrip) : __defers["$.__views.__alloyId17!click!startTrip"] = true;
-    $.__views.container.rightNavButton = $.__views.__alloyId17;
+    openManualEntry ? $.__views.__alloyId22.addEventListener("click", openManualEntry) : __defers["$.__views.__alloyId22!click!openManualEntry"] = true;
+    $.__views.container.leftNavButton = $.__views.__alloyId22;
+    $.__views.__alloyId24 = Ti.UI.createButton({
+        title: "Start Trip",
+        id: "__alloyId24"
+    });
+    startTrip ? $.__views.__alloyId24.addEventListener("click", startTrip) : __defers["$.__views.__alloyId24!click!startTrip"] = true;
+    $.__views.container.rightNavButton = $.__views.__alloyId24;
     exports.destroy = function() {};
     _.extend($, $.__views);
     arguments[0] || {};
@@ -214,7 +226,8 @@ function Controller() {
     });
     Ti.App.addEventListener("finalizeTrip", finalizeTrip);
     $.container.open();
-    __defers["$.__views.__alloyId17!click!startTrip"] && $.__views.__alloyId17.addEventListener("click", startTrip);
+    __defers["$.__views.__alloyId22!click!openManualEntry"] && $.__views.__alloyId22.addEventListener("click", openManualEntry);
+    __defers["$.__views.__alloyId24!click!startTrip"] && $.__views.__alloyId24.addEventListener("click", startTrip);
     _.extend($, exports);
 }
 

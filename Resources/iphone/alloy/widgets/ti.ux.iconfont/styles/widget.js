@@ -579,7 +579,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0008,
+    priority: 100000.0065,
     key: "view",
     style: {
         top: 0,
@@ -588,7 +588,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0009,
+    priority: 100000.0066,
     key: "img",
     style: {
         top: "5dp",
@@ -597,7 +597,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.001,
+    priority: 100000.0067,
     key: "line",
     style: {
         bottom: 0,

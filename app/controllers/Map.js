@@ -247,5 +247,12 @@ function startTrip(e){
 	}
 }
 
+function openManualEntry(){
+	var modal = Alloy.createController('ManulEntry');
+	modal.getView().open({
+		modal:true
+	});
+}
+
 //finally,
 $.container.open();

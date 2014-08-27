@@ -6,57 +6,57 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __alloyId39 = [];
-    $.__views.__alloyId41 = Ti.UI.createWindow({
+    var __alloyId46 = [];
+    $.__views.__alloyId48 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Tab 1",
-        id: "__alloyId41"
+        id: "__alloyId48"
     });
-    $.__views.__alloyId40 = Ti.UI.createTab({
-        window: $.__views.__alloyId41,
+    $.__views.__alloyId47 = Ti.UI.createTab({
+        window: $.__views.__alloyId48,
         title: "Trips",
         icon: "images/Map_Path.png",
-        id: "__alloyId40"
+        id: "__alloyId47"
     });
-    __alloyId39.push($.__views.__alloyId40);
-    $.__views.__alloyId43 = Ti.UI.createWindow({
+    __alloyId46.push($.__views.__alloyId47);
+    $.__views.__alloyId50 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Tab 2",
-        id: "__alloyId43"
+        id: "__alloyId50"
     });
-    $.__views.__alloyId42 = Ti.UI.createTab({
-        window: $.__views.__alloyId43,
+    $.__views.__alloyId49 = Ti.UI.createTab({
+        window: $.__views.__alloyId50,
         title: "Journey",
         icon: "images/Near_Me.png",
-        id: "__alloyId42"
+        id: "__alloyId49"
     });
-    __alloyId39.push($.__views.__alloyId42);
-    $.__views.__alloyId45 = Ti.UI.createWindow({
+    __alloyId46.push($.__views.__alloyId49);
+    $.__views.__alloyId52 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         barColor: "#fff",
         navTintColor: "#000",
         translucent: false,
         title: "Settings",
-        id: "__alloyId45"
+        id: "__alloyId52"
     });
-    $.__views.__alloyId44 = Ti.UI.createTab({
-        window: $.__views.__alloyId45,
+    $.__views.__alloyId51 = Ti.UI.createTab({
+        window: $.__views.__alloyId52,
         title: "Settings",
         icon: "images/Network_Closed.png",
-        id: "__alloyId44"
+        id: "__alloyId51"
     });
-    __alloyId39.push($.__views.__alloyId44);
+    __alloyId46.push($.__views.__alloyId51);
     $.__views.index = Ti.UI.createTabGroup({
         tabsBackgroundColor: "#fff",
         tintColor: "#000",
         tabsBackgroundDisabledColor: "#fff",
-        tabs: __alloyId39,
+        tabs: __alloyId46,
         activeTab: "1",
         id: "index"
     });

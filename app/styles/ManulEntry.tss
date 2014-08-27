@@ -1,4 +1,53 @@
-
 ".container" : {
-  
+}
+
+"#header": {
+	height: 44,
+	top: 0,
+	width: Ti.UI.FILL
+}
+
+"#lblHeading":{
+	width: Titanium.UI.FILL,
+	top: 20,
+	height: 44,
+	textAlign: 'center',
+	font:{
+		fontSize: 15,
+		fontWeight: 'bold'
+	}
+}
+
+"#closeBtn": {
+	right: 5,
+	width: Ti.UI.SIZE,
+	height: 44,
+	top:20,
+	color: '#000'
+}
+
+"TableView[platform=ios]":{
+	separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
+	top: 70
+},
+
+"TableViewRow":{	
+	height:Ti.UI.SIZE
+},
+
+"TableViewRow[platform=ios]":{
+	selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE
+},
+
+"#btnSave" :{
+	left: 10,
+	right: 10,
+	height: 40,
+	borderWidth: 1,
+	borderColor: '#000',
+	backgroundColor: '#fff',
+	top: 20,
+	backgroundSelectedColor: '#ccc',
+	backgroundFocusedColor: '#ccc',
+	color: '#000'
 }

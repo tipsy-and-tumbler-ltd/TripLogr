@@ -579,7 +579,7 @@ module.exports = [ {
     }
 }, {
     isId: true,
-    priority: 100000.0002,
+    priority: 100000.0059,
     key: "imgContainer",
     style: {
         width: Ti.UI.SIZE,

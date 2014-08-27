@@ -53,15 +53,15 @@ function Controller() {
         id: "dateMonthYear"
     });
     $.__views.rowContainer.add($.__views.dateMonthYear);
-    $.__views.__alloyId32 = Ti.UI.createImageView({
+    $.__views.__alloyId39 = Ti.UI.createImageView({
         image: "images/row_divider.jpg",
         height: "60",
         width: "1",
         left: "100",
         top: "10",
-        id: "__alloyId32"
+        id: "__alloyId39"
     });
-    $.__views.rowContainer.add($.__views.__alloyId32);
+    $.__views.rowContainer.add($.__views.__alloyId39);
     $.__views.lblDescription = Ti.UI.createLabel({
         font: {
             fontSize: 13

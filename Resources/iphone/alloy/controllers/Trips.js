@@ -61,18 +61,18 @@ function Controller() {
         id: "win"
     });
     $.__views.win && $.addTopLevelView($.__views.win);
-    $.__views.__alloyId34 = Ti.UI.createButton({
+    $.__views.__alloyId41 = Ti.UI.createButton({
         title: "Report",
-        id: "__alloyId34"
+        id: "__alloyId41"
     });
-    createReport ? $.__views.__alloyId34.addEventListener("click", createReport) : __defers["$.__views.__alloyId34!click!createReport"] = true;
-    $.__views.win.rightNavButton = $.__views.__alloyId34;
-    var __alloyId35 = [];
-    $.__views.__alloyId36 = Ti.UI.createTableViewSection({
-        id: "__alloyId36"
+    createReport ? $.__views.__alloyId41.addEventListener("click", createReport) : __defers["$.__views.__alloyId41!click!createReport"] = true;
+    $.__views.win.rightNavButton = $.__views.__alloyId41;
+    var __alloyId42 = [];
+    $.__views.__alloyId43 = Ti.UI.createTableViewSection({
+        id: "__alloyId43"
     });
-    __alloyId35.push($.__views.__alloyId36);
-    $.__views.__alloyId37 = Ti.UI.createTableViewRow({
+    __alloyId42.push($.__views.__alloyId43);
+    $.__views.__alloyId44 = Ti.UI.createTableViewRow({
         height: "315",
         backgroundColor: "#fff",
         font: {
@@ -80,9 +80,9 @@ function Controller() {
             fontSize: 16
         },
         selectionStyle: Titanium.UI.iPhone.TableViewCellSelectionStyle.NONE,
-        id: "__alloyId37"
+        id: "__alloyId44"
     });
-    $.__views.__alloyId36.add($.__views.__alloyId37);
+    $.__views.__alloyId43.add($.__views.__alloyId44);
     $.__views.img = Alloy.createWidget("ti.ux.image", "widget", {
         id: "img",
         left: "0",
@@ -94,9 +94,9 @@ function Controller() {
         top: "0",
         image: "/images/default-car.jpg",
         touchEnabled: "false",
-        __parentSymbol: $.__views.__alloyId37
+        __parentSymbol: $.__views.__alloyId44
     });
-    $.__views.img.setParent($.__views.__alloyId37);
+    $.__views.img.setParent($.__views.__alloyId44);
     $.__views.cameraBtn = Ti.UI.createImageView({
         image: "/images/Instagram.png",
         width: 25,
@@ -106,8 +106,8 @@ function Controller() {
         zIndex: "999",
         id: "cameraBtn"
     });
-    $.__views.__alloyId37.add($.__views.cameraBtn);
-    $.__views.__alloyId38 = Ti.UI.createLabel({
+    $.__views.__alloyId44.add($.__views.cameraBtn);
+    $.__views.__alloyId45 = Ti.UI.createLabel({
         font: {
             fontFamily: Alloy.CFG.normalFont,
             fontSize: "14dp"
@@ -119,13 +119,13 @@ function Controller() {
         left: "10",
         top: "210",
         right: "10",
-        id: "__alloyId38"
+        id: "__alloyId45"
     });
-    $.__views.__alloyId37.add($.__views.__alloyId38);
+    $.__views.__alloyId44.add($.__views.__alloyId45);
     $.__views.tblTrips = Ti.UI.createTableView({
         backgroundColor: "#fff",
         separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
-        data: __alloyId35,
+        data: __alloyId42,
         id: "tblTrips"
     });
     $.__views.win.add($.__views.tblTrips);
@@ -162,7 +162,7 @@ function Controller() {
         dialog.show();
     });
     setImageFromFileSystem();
-    __defers["$.__views.__alloyId34!click!createReport"] && $.__views.__alloyId34.addEventListener("click", createReport);
+    __defers["$.__views.__alloyId41!click!createReport"] && $.__views.__alloyId41.addEventListener("click", createReport);
     _.extend($, exports);
 }
 

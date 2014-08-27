@@ -30,17 +30,17 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		2412F467115C296300454E5B /* TiMediaVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412F465115C296300454E5B /* TiMediaVideoPlayer.m */; };
 		242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		00B61166E5384A3997FE3691 /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A27F09B3FF4B9EB7FDE956 /* libti.imagefactory.a */; };
-		B91F66B0DF2F42B2A3A964FB /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8C55457DD742D4A091B335 /* libbencoding.pdf.a */; };
-		1688629D971C4B5E9467B22A /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A17E8875243436986D08915 /* libco.mobiledatasystems.tibeacon.a */; };
-		3B83841DB60A4B8B95E70390 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F803E52C444236A573988A /* libcom.dezinezync.dzyapdatabase.a */; };
-		ACD270052C504D00BADB392B /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E26DEDEB08F42A5BD9FC3BF /* libcom.polancomedia.mapbox.a */; };
+		E10B5AF54CE64BE290FA6E5E /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C910B14E5BF34EB0B96316B9 /* libti.imagefactory.a */; };
+		51ED1D5662B54546B835AEE4 /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96184DA86794FDAA60A8CDF /* libbencoding.pdf.a */; };
+		0966CBBC60624F02AEA231C6 /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B377BB1CAF94E47B669B87C /* libco.mobiledatasystems.tibeacon.a */; };
+		9EA7077A965B4965AE0F1F21 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484D9A5A627F48BE90419AFE /* libcom.dezinezync.dzyapdatabase.a */; };
+		1D078DF1B99D4E58BDF1E824 /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55513F8B316C477883ED7B10 /* libcom.polancomedia.mapbox.a */; };
 		242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		4C4315B671D743C48A32C263 /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A27F09B3FF4B9EB7FDE956 /* libti.imagefactory.a */; };
-		111A6860EB8A412394CA93C5 /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8C55457DD742D4A091B335 /* libbencoding.pdf.a */; };
-		6582396BC7064B609E82497E /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A17E8875243436986D08915 /* libco.mobiledatasystems.tibeacon.a */; };
-		E53B2F9B1F88450385BE4B6C /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F803E52C444236A573988A /* libcom.dezinezync.dzyapdatabase.a */; };
-		CD72C610338A48E29184AEB1 /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E26DEDEB08F42A5BD9FC3BF /* libcom.polancomedia.mapbox.a */; };
+		F63288FB485146D397C805B3 /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C910B14E5BF34EB0B96316B9 /* libti.imagefactory.a */; };
+		B2982E0DA41D4630BB100B6A /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96184DA86794FDAA60A8CDF /* libbencoding.pdf.a */; };
+		C729E4B73A0E496E8ABEC00F /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B377BB1CAF94E47B669B87C /* libco.mobiledatasystems.tibeacon.a */; };
+		C4A9A76F561F4ABA985AAEDF /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484D9A5A627F48BE90419AFE /* libcom.dezinezync.dzyapdatabase.a */; };
+		2A8F55026A5E4C1899F442BC /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55513F8B316C477883ED7B10 /* libcom.polancomedia.mapbox.a */; };
 		242E967711BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
 		242E967811BAD2F20046A0D0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967611BAD2F20046A0D0 /* AsyncUdpSocket.m */; };
 		242E967911BAD2F20046A0D0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 242E967411BAD2F20046A0D0 /* AsyncSocket.m */; };
@@ -901,11 +901,11 @@
 		DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EB0A57111E1BAE001DC2D1 /* libxml2.dylib */; };
 		DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24597034118FF66300519F79 /* StoreKit.framework */; };
 		DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 242E8E3011BA39FD0046A0D0 /* libTiCore.a */; };
-		E0455E2961AC44A68545733A /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A27F09B3FF4B9EB7FDE956 /* libti.imagefactory.a */; };
-		9E975865B5FA4822BEDE951D /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8C55457DD742D4A091B335 /* libbencoding.pdf.a */; };
-		835E3430BB494EA280ADD448 /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A17E8875243436986D08915 /* libco.mobiledatasystems.tibeacon.a */; };
-		61314272FE0741FD8A88EDF5 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F803E52C444236A573988A /* libcom.dezinezync.dzyapdatabase.a */; };
-		253490ACAE5149A9B7C65FF4 /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E26DEDEB08F42A5BD9FC3BF /* libcom.polancomedia.mapbox.a */; };
+		B7B1B3BC685F4512A37A226B /* libti.imagefactory.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C910B14E5BF34EB0B96316B9 /* libti.imagefactory.a */; };
+		D897ABA665CD45938FD22069 /* libbencoding.pdf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96184DA86794FDAA60A8CDF /* libbencoding.pdf.a */; };
+		094074C9B57647079D1565D8 /* libco.mobiledatasystems.tibeacon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B377BB1CAF94E47B669B87C /* libco.mobiledatasystems.tibeacon.a */; };
+		7BF1CA6567D745E294C240AA /* libcom.dezinezync.dzyapdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484D9A5A627F48BE90419AFE /* libcom.dezinezync.dzyapdatabase.a */; };
+		869D12C53C19428D9F004737 /* libcom.polancomedia.mapbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55513F8B316C477883ED7B10 /* libcom.polancomedia.mapbox.a */; };
 		DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24D5C75811E6364F00F097E2 /* libtiverify.a */; };
 		DABDEB08128B5A8F00C85FEA /* AudioStreamerCUR.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9FF582128A1F3600457759 /* AudioStreamerCUR.m */; };
 		DABF3ECF134D210400836137 /* TiBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = DABF3ECE134D210400836137 /* TiBuffer.m */; };
@@ -955,11 +955,11 @@
 		241EAA21118AB3BB0081A5BE /* defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = defines.h; path = Classes/defines.h; sourceTree = SOURCE_ROOT; };
 		241EAEC5118E2BA90081A5BE /* project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = project.xcconfig; sourceTree = "<group>"; };
 		242E8E3011BA39FD0046A0D0 /* libTiCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTiCore.a; path = lib/libTiCore.a; sourceTree = SOURCE_ROOT; };
-		76A27F09B3FF4B9EB7FDE956 /* libti.imagefactory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libti.imagefactory.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/ti.imagefactory/1.1.1/libti.imagefactory.a"; sourceTree = "<absolute>"; };
-		6B8C55457DD742D4A091B335 /* libbencoding.pdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbencoding.pdf.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/bencoding.pdf/0.2/libbencoding.pdf.a"; sourceTree = "<absolute>"; };
-		0A17E8875243436986D08915 /* libco.mobiledatasystems.tibeacon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libco.mobiledatasystems.tibeacon.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/co.mobiledatasystems.tibeacon/1.0/libco.mobiledatasystems.tibeacon.a"; sourceTree = "<absolute>"; };
-		49F803E52C444236A573988A /* libcom.dezinezync.dzyapdatabase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.dezinezync.dzyapdatabase.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/com.dezinezync.dzyapdatabase/1.0/libcom.dezinezync.dzyapdatabase.a"; sourceTree = "<absolute>"; };
-		8E26DEDEB08F42A5BD9FC3BF /* libcom.polancomedia.mapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.polancomedia.mapbox.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/com.polancomedia.mapbox/0.4/libcom.polancomedia.mapbox.a"; sourceTree = "<absolute>"; };
+		C910B14E5BF34EB0B96316B9 /* libti.imagefactory.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libti.imagefactory.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/ti.imagefactory/1.1.1/libti.imagefactory.a"; sourceTree = "<absolute>"; };
+		C96184DA86794FDAA60A8CDF /* libbencoding.pdf.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbencoding.pdf.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/bencoding.pdf/0.2/libbencoding.pdf.a"; sourceTree = "<absolute>"; };
+		6B377BB1CAF94E47B669B87C /* libco.mobiledatasystems.tibeacon.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libco.mobiledatasystems.tibeacon.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/co.mobiledatasystems.tibeacon/1.0/libco.mobiledatasystems.tibeacon.a"; sourceTree = "<absolute>"; };
+		484D9A5A627F48BE90419AFE /* libcom.dezinezync.dzyapdatabase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.dezinezync.dzyapdatabase.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/com.dezinezync.dzyapdatabase/1.0/libcom.dezinezync.dzyapdatabase.a"; sourceTree = "<absolute>"; };
+		55513F8B316C477883ED7B10 /* libcom.polancomedia.mapbox.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcom.polancomedia.mapbox.a; path = "/Users/boydlee/Documents/Projects/TripLogr/modules/iphone/com.polancomedia.mapbox/0.4/libcom.polancomedia.mapbox.a"; sourceTree = "<absolute>"; };
 		242E95C811BAC8B40046A0D0 /* TiDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiDebugger.h; path = Classes/TiDebugger.h; sourceTree = SOURCE_ROOT; };
 		242E967311BAD2F20046A0D0 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Classes/AsyncSocket.h; sourceTree = SOURCE_ROOT; };
 		242E967411BAD2F20046A0D0 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Classes/AsyncSocket.m; sourceTree = SOURCE_ROOT; };
@@ -1588,11 +1588,11 @@
 				24EB0A58111E1BAE001DC2D1 /* libxml2.dylib in Frameworks */,
 				24597035118FF66300519F79 /* StoreKit.framework in Frameworks */,
 				242E8E3111BA39FD0046A0D0 /* libTiCore.a in Frameworks */,
-				00B61166E5384A3997FE3691 /* libti.imagefactory.a in Frameworks */,
-				B91F66B0DF2F42B2A3A964FB /* libbencoding.pdf.a in Frameworks */,
-				1688629D971C4B5E9467B22A /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
-				3B83841DB60A4B8B95E70390 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
-				ACD270052C504D00BADB392B /* libcom.polancomedia.mapbox.a in Frameworks */,
+				E10B5AF54CE64BE290FA6E5E /* libti.imagefactory.a in Frameworks */,
+				51ED1D5662B54546B835AEE4 /* libbencoding.pdf.a in Frameworks */,
+				0966CBBC60624F02AEA231C6 /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
+				9EA7077A965B4965AE0F1F21 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
+				1D078DF1B99D4E58BDF1E824 /* libcom.polancomedia.mapbox.a in Frameworks */,
 				B606EF60190B42FB00663EFC /* libAPSHTTPClient.a in Frameworks */,
 				242EA11611BD956F0046A0D0 /* ExternalAccessory.framework in Frameworks */,
 				24D5C75911E6364F00F097E2 /* libtiverify.a in Frameworks */,
@@ -1632,11 +1632,11 @@
 				24D8E4AB119B9D8A00F8CAA6 /* libxml2.dylib in Frameworks */,
 				24D8E4AC119B9D8A00F8CAA6 /* StoreKit.framework in Frameworks */,
 				242E8E3211BA39FE0046A0D0 /* libTiCore.a in Frameworks */,
-				4C4315B671D743C48A32C263 /* libti.imagefactory.a in Frameworks */,
-				111A6860EB8A412394CA93C5 /* libbencoding.pdf.a in Frameworks */,
-				6582396BC7064B609E82497E /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
-				E53B2F9B1F88450385BE4B6C /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
-				CD72C610338A48E29184AEB1 /* libcom.polancomedia.mapbox.a in Frameworks */,
+				F63288FB485146D397C805B3 /* libti.imagefactory.a in Frameworks */,
+				B2982E0DA41D4630BB100B6A /* libbencoding.pdf.a in Frameworks */,
+				C729E4B73A0E496E8ABEC00F /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
+				C4A9A76F561F4ABA985AAEDF /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
+				2A8F55026A5E4C1899F442BC /* libcom.polancomedia.mapbox.a in Frameworks */,
 				24D5C75A11E6364F00F097E2 /* libtiverify.a in Frameworks */,
 				DAA4B2AF134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D613D65C6F0079FC75 /* libicucore.dylib in Frameworks */,
@@ -1676,11 +1676,11 @@
 				DABB37B412E8CB280026A6EA /* libxml2.dylib in Frameworks */,
 				DABB37B512E8CB280026A6EA /* StoreKit.framework in Frameworks */,
 				DABB37B612E8CB280026A6EA /* libTiCore.a in Frameworks */,
-				E0455E2961AC44A68545733A /* libti.imagefactory.a in Frameworks */,
-				9E975865B5FA4822BEDE951D /* libbencoding.pdf.a in Frameworks */,
-				835E3430BB494EA280ADD448 /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
-				61314272FE0741FD8A88EDF5 /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
-				253490ACAE5149A9B7C65FF4 /* libcom.polancomedia.mapbox.a in Frameworks */,
+				B7B1B3BC685F4512A37A226B /* libti.imagefactory.a in Frameworks */,
+				D897ABA665CD45938FD22069 /* libbencoding.pdf.a in Frameworks */,
+				094074C9B57647079D1565D8 /* libco.mobiledatasystems.tibeacon.a in Frameworks */,
+				7BF1CA6567D745E294C240AA /* libcom.dezinezync.dzyapdatabase.a in Frameworks */,
+				869D12C53C19428D9F004737 /* libcom.polancomedia.mapbox.a in Frameworks */,
 				DABB37B712E8CB280026A6EA /* libtiverify.a in Frameworks */,
 				DAA4B2B0134E3DBD00AB6011 /* libti_ios_debugger.a in Frameworks */,
 				DADE76D713D65C7D0079FC75 /* libicucore.dylib in Frameworks */,
@@ -2769,11 +2769,11 @@
 				DAA4B2AD134E3DBD00AB6011 /* libti_ios_debugger.a */,
 				24D5C75811E6364F00F097E2 /* libtiverify.a */,
 				242E8E3011BA39FD0046A0D0 /* libTiCore.a */,
-				76A27F09B3FF4B9EB7FDE956 /* libti.imagefactory.a */,
-				6B8C55457DD742D4A091B335 /* libbencoding.pdf.a */,
-				0A17E8875243436986D08915 /* libco.mobiledatasystems.tibeacon.a */,
-				49F803E52C444236A573988A /* libcom.dezinezync.dzyapdatabase.a */,
-				8E26DEDEB08F42A5BD9FC3BF /* libcom.polancomedia.mapbox.a */,
+				C910B14E5BF34EB0B96316B9 /* libti.imagefactory.a */,
+				C96184DA86794FDAA60A8CDF /* libbencoding.pdf.a */,
+				6B377BB1CAF94E47B669B87C /* libco.mobiledatasystems.tibeacon.a */,
+				484D9A5A627F48BE90419AFE /* libcom.dezinezync.dzyapdatabase.a */,
+				55513F8B316C477883ED7B10 /* libcom.polancomedia.mapbox.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
