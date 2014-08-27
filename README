@@ -1,9 +1,6 @@
-TripLogr is a free utility made in Appcelerator Titanium for tracking journeys and providing a log book style PDF print-out. 
-It features a number of open source Titanium libraries and modules. 
+TripLogr is a free utility made in Appcelerator Titanium for tracking journeys and providing a log book style PDF print-out. It features a number of open source Titanium libraries and modules. 
 
-It is meant to be a showcase of what Titanium can do and how you can integrate with numerous open source projects. 
-In particular, it uses a number of modules and open source libraries made available by the community and showcased
-during tiConf events in 2014, including:
+It is meant to be a showcase of what Titanium can do and how you can integrate with numerous open source projects.  In particular, it uses a number of modules and open source libraries made available by the community and showcased during tiConf events in 2014, including:
 
 Titanium MapBox (Adam Paxton) - https://github.com/adampax/titanium-mapbox (tiConf US)
 
@@ -15,3 +12,8 @@ TiBeacon (Martin Hudson) - https://marketplace.appcelerator.com/apps/11242?resto
 
 Bencoding PDF (Benjamin Bahrenburg) - https://github.com/benbahrenburg/benCoding.PDF
 
+Also worth special mention are the following presenters at tiConf who provided great talks and insights into a number of the processes that went into this app, including:
+
+Stephen Feather - Getting started with Gimbal beacons (http://t.co/bLHm9Wj1qI)
+Jason Kneen
+Fokke Zandbergen

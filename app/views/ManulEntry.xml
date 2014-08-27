@@ -1,6 +1,7 @@
 <Alloy>
 	<Window class="container" modal="true"  navBarHidden="false"  title="Manual Trip Entry" id="win">
 		    <View id="header">
+		    	<Label id="lblHeading" text="Manual Trip Entry" />
 		      <Button title="Close" id="closeBtn" onClick="closeWindow" />
             </View>
             
