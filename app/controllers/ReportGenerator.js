@@ -245,8 +245,7 @@ function sortTripData(a, b) {
 
 Ti.App.addEventListener('generateReport', generatePDF);
 
-$.btnCreateReport.addEventListener('click', function(e) {
-	if($.fromDate.getValue() == undefined || $.fromDate.getValue() == null) {
+$.btnCreateReport.addEventListener('click', function(e) {	
 		YapDB.fetchAllTrips(function(_results) {
 			for (var i = 0; i < _results.length; i++) {
 				Ti.API.info($.fromDate.getValue());
@@ -256,5 +255,4 @@ $.btnCreateReport.addEventListener('click', function(e) {
 			}
 			Ti.App.fireEvent('generateReport');
 		});
-	}
 });

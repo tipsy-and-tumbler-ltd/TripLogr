@@ -77,6 +77,19 @@ var YapDB = {
 			    callback(success);
 			});
 	  },
+	  
+	  updateManualTrip: function(_id, _date, purpose, odo_end, km, callback){  	
+	  	    var distance = (Alloy.Globals.TripLogr.distanceMeasurement.toLowerCase == 'miles') ? Math.floor(km * 0.62137) : km;
+	  	    var odo_start = Math.floor(odo_end) - distance;
+	  	    odo_end = Math.floor(odo_end);
+	  	    odo_start = Math.floor(odo_start);
+
+			db.setInCollection("trip:"+_id, "trips", {"id": _id, "date": _date, "purpose": purpose, "odometer_start": odo_start, "odometer_end":odo_end, "total_kilometers": km, "cloud": false}, function(success) {    
+			   // console.log("Set", success);
+			    callback(success);
+			});
+	  },
+	  
 
 	  createWaypoint: function(latitude, longitude, trip_id, callback){  	
 			db.setInCollection("waypoint:"+ Math.floor((Math.random() * 10000000) + 1), "waypoints", { "date": new Date(), "latitude": latitude, "longitude": longitude, "trip_id":trip_id}, function(success) {    
