@@ -1,3 +1,5 @@
+#TripLogr
+
 TripLogr is a free utility made in Appcelerator Titanium for tracking journeys and providing a log book style PDF print-out. You can track journeys either manually (by entering in the journey purpose and length via a form) or you can opt to track a journey using GPS and have the app automatically calculate distances. It also includes beacon integration - leave an iBeacon in your car to receive localised push notifications reminding you to log your trips!
 
 ![alt text](http://i.imgur.com/4rkeRjn.jpg "Trips Screen")
